@@ -21,7 +21,7 @@ RUN apk add procps curl bash docker
 COPY --from=builder /opt/cronicle/ /opt/cronicle/
 WORKDIR /opt/cronicle
 
-ENV CRONICLE_base_app_url='http://localhost:3012'
+ENV CRONICLE_base_app_url='http://cronicle:3012'
 ENV CRONICLE_WebServer__http_port=3012
 ENV CRONICLE_WebServer__https_port=443
 
