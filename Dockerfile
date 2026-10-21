@@ -11,8 +11,8 @@ RUN tar zxvf /tmp/Cronicle-${CRONICLE_VERSION}.tar.gz -C /tmp/
 RUN mv /tmp/Cronicle-${CRONICLE_VERSION}/* .
 RUN rm -rf /tmp/*
 RUN yarn
-COPY ./docker/patches /tmp/patches
-RUN patch -p3 < /tmp/patches/engine.patch lib/engine.js
+#COPY ./docker/patches /tmp/patches
+#RUN patch -p3 < /tmp/patches/engine.patch lib/engine.js
 COPY docker/docker-entrypoint.js ./bin/
 
 #FROM node:18-alpine
