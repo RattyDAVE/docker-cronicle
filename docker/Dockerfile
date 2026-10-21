@@ -11,9 +11,8 @@ COPY ./patches /tmp/patches
 RUN patch -p3 < /tmp/patches/engine.patch lib/engine.js
 COPY docker-entrypoint.js ./bin/
 
-
 FROM node:18-alpine
-RUN apk add procps curl bash
+RUN apk add procps curl bash docker
 COPY --from=builder /opt/cronicle/ /opt/cronicle/
 WORKDIR /opt/cronicle
 ENV CRONICLE_foreground=1
