@@ -3,7 +3,7 @@
 FROM node:26-alpine AS builder
 RUN apk add curl yarn patch unzip
 #ENV CRONICLE_VERSION=0.9.80
-ENV CRONICLE_VERSION=0.9.137
+#ENV CRONICLE_VERSION=0.9.137
 WORKDIR /opt/cronicle
 ##RUN curl -L -o /tmp/Cronicle-${CRONICLE_VERSION}.tar.gz https://github.com/jhuckaby/Cronicle/archive/refs/tags/v${CRONICLE_VERSION}.tar.gz
 # COPY Cronicle-${CRONICLE_VERSION}.tar.gz /tmp/
