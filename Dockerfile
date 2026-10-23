@@ -11,7 +11,7 @@ WORKDIR /opt/cronicle
 ##RUN mv /tmp/Cronicle-${CRONICLE_VERSION}/* .
 
 RUN curl -L -o /tmp/Cronicle-master.zip https://codeload.github.com/jhuckaby/Cronicle/zip/refs/heads/master
-RUN unzip /tmp/Cronicle-master.zip
+RUN unzip /tmp/Cronicle-master.zip -d /tmp
 RUN mv /tmp/Cronicle-master/* .
 
 RUN rm -rf /tmp/*
