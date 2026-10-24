@@ -35,4 +35,7 @@ VOLUME /opt/cronicle/logs
 VOLUME /opt/cronicle/plugins
 VOLUME /root/.docker
 
+HEALTHCHECK --interval=1m --timeout=1s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider localhost:3012/api/app/ping || exit 1
+
 CMD ["node", "bin/docker-entrypoint.js"]
